@@ -1,0 +1,27 @@
+
+function findPair(arr, sum) {
+    const pairHash = {};
+    const pairs = [];
+  
+    arr.forEach((item)=> {
+
+    if(pairHash[sum-item]) {
+        pairs.push([sum-item, item]);
+        delete pairHash[sum-item]
+      } else {
+        pairHash[item+""] = true;
+      }
+      
+    });
+    
+    return pairs;
+  }
+
+let arr = [4, 1, 8, 0, 2, 9, 3, 5, 3, 6, 7, 1];
+let sum = 9;
+
+
+console.log(findPair(arr, sum))
+
+
+//[ [ 1, 8 ], [ 0, 9 ], [ 4, 5 ], [ 3, 6 ], [ 2, 7 ] ]
