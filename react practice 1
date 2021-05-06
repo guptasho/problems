@@ -1,0 +1,213 @@
+//arr = ["one", "two"]
+
+
+import React from "react"
+import styles from "./styles"
+
+export default class Cards extends React.component {
+
+createCardsTemplate(cardHeadings) {
+
+return cardHeadings.map((heading)=>  {
+  if(heading === "six") {
+    <></>;
+  }
+  <Card heading= {heading} ></Card>
+})
+}
+
+render() {
+
+const {cardHeadings} = this.props;
+
+return(
+<div className={cards}>
+{createCardsTemplate(cardHeadings)}
+
+</div>)
+}}
+
+
+
+import React from "react"
+import styles from "./styles"
+
+
+export default class Card extends React.component {
+
+render() {
+
+const {heading} = this.props
+
+return(
+<div className={card}>
+  <h1>{heading}</h1>
+  
+</div>)
+}}
+
+
+
+// CSS styles.css
+
+.cards {
+display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+
+}
+
+.card {
+margin-left: 10px;
+height: 100px;
+width: 150px;
+}
+
+.card:first-child {
+margin-left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+["api1" "api2" "api3"]
+
+
+function resolveAll(urls) {
+
+const promises = urls.map((url)=> {
+  return new Promise((res, rej)=> {
+
+  fetch(url).then((data)=>{
+    res(data)
+  }).catch((err)=>{
+    rej(err)
+  })
+})
+
+})
+
+
+Promise.all(promises).then((data)=>{
+console.log(success)
+
+}).catch(err=>console.log(err))
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from "react"
+import styles from "./styles"
+
+export default class Search extends React.component {
+
+constructor() {
+  super(props);
+
+  this.state {
+    search: ""
+  }
+}
+onChangeHandler(searchStr) {
+  if(searchStr.length > 2) {
+    new Promise((res, rej))
+      
+  }
+}
+
+render() {
+
+
+return(
+<div>
+  <input type="text" onChange={(e)=> onChangeHandler(e.target.value)}></input>
+</div>) 
+}}
+
+
+
+
