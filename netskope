@@ -1,0 +1,174 @@
+Implement a Star Rating web app
+
+5 white stars lined up horizontally. 
+☆ ☆ ☆ ☆ ☆
+
+Click on one star, the star and those before it are turned black. 
+
+E.g. Clicked on the 4th star
+★ ★ ★ ★ ☆
+
+Collect all users’ ratings in the database so that you can generate a report as such:
+
++---------+--------+
++  Joe    |   4    +
++---------+--------+
++  Lisa   |   3    +
++---------+--------+
++ ...     |   ...  +
+
+
+You are required to implement on -
+Client side: Style, Markup, Interaction.
+Server side: API, server-side code and SQL DB.
+
+
+// Client Side
+
+// App.js
+
+function App() {
+
+const function sendRating(rating) {
+
+// API call
+
+
+}
+
+return {
+<div className="ratingWrapper">
+  <rating sendRating={sendRating}>
+  </rating>
+</div>
+}
+
+}
+
+// export default function RAting({sendRating}) {
+
+const [rating, setRating] = useState(0);
+
+const function handleStarClick(rating) {
+  setRating(rating);
+  sendRating(rating);
+}
+
+const starTemplate = [1,2,3,4,5].map(tempRating => {
+  return (
+  <div className="star">
+    {
+      rating > tempRating ?
+      <img src="ratedStar.svg" onClick={()=>handleStarClick(tempRating)}></starIconRated> :
+      <img src="unrated.svg"  onClick={()=>handleStarClick(tempRating)}></starIconUnRated> 
+    }
+  </div>
+  )
+})
+return starTemplate;
+}
+
+
+// Styles.css
+
+.ratingWrapper {
+  display: flex;
+  flex-direction: row
+  justify-content: space-between;
+  width: 200px;
+}
+
+
+
+// Server
+
+User: {
+  name: string
+  email: string
+  id: string
+}
+
+user-password: {
+userId: string, (id)
+passwordHash: string(hash)
+}
+
+product: {
+
+id: string,
+description: string
+name: string
+
+}
+
+rating: {
+productId: string
+rating: string,
+userId: string,
+}
+
+// Login - Server
+
+router.js
+
+ function router() {
+ return [
+ {
+  route: "/login"
+  controller: "loginController",
+  method: POST
+ },
+ {
+ 
+ }
+ ]
+ }
+ 
+ 
+ login Controller:
+ 
+ export default function LoginController(request, response) {
+  const {userid, pass} = request.body;
+  
+  // db call returns array of matching entries
+  
+  const data = db.getUser(userId, password);
+  
+  // select * from user-pasword where userId=userid AND password=pass;
+  
+  Insert 
+ 
+ }
+ 
+ 
+ // API's
+ 
+1. GET - Rating
+
+ 2. POST - RAting
+  input {
+    prodID: 
+    userId:
+    rating:
+  }
+ 3. PUT - Updating
+  input {
+    prodID: 
+    userId:
+    rating:
+  }
+ 
+ 4. POST - authentication
+
+
+ 5. GET - Report {
+ input: productId
+   output: [{
+     userName:
+     Rating: 
+   },
+   ]
+ }
+ 
+ 
+ 
