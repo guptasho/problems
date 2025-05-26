@@ -1,0 +1,23 @@
+import "./styles.css";
+
+function sampleVariance(arr) {
+  if (!Array.isArray(arr) || arr.length < 2) {
+    throw new Error("arr should be array and length shoulbe atleast 2");
+  }
+
+  const mean =
+    arr.reduce((acc, item) => {
+      return acc + item;
+    }, 0) / arr.length;
+
+  const variance =
+    arr.reduce((acc, item) => {
+      return Math.pow(mean - item, 2) + acc;
+    }, 0) /
+    (arr.length - 1);
+
+  return variance;
+}
+
+const data = [4, 7, 13, 16];
+console.log("Sample Variance:", sampleVariance(data));
